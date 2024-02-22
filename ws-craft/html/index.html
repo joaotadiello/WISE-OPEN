@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>WISE - SOURCE</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+</head>
+<body style="display: none;">
+
+    <main>
+        <crafting style="display: none;">
+            <div class="inspect-title">
+                <div class="title-left">
+                    mesa
+                </div>
+                <div class="title-icon">
+                    <i class="fal fa-border-none">aa</i>
+                </div>
+                <div class="title-right">
+                    craft
+                </div>
+            </div>
+            
+            <section class="inspect-info" style="margin-right:20px">
+                <div class="inspect-offer">
+                    <p id="title">seu <b>inventario</b></p>
+                    <div class="inspect-content right-send"></div>
+                    <div class="modal" style="display: none;"></div>
+                </div>
+            </section>
+
+            <section id="table" style="display: none;">
+                <div class="inventory-craft">
+                    <div class="craft-result">
+                        <div class="result-left" onclick="refresh_craft()">
+                            <i class="far fa-sync icon"></i>
+                        </div>
+                        <div class="result-center">
+                            <div class="ldBar noLabel myBar" 
+                                data-stroke-width="1"
+                                data-transition-in="100"	
+                                data-stroke-dir="reverse"
+                                data-stroke-trail-width="2"
+                                data-stroke-trail="rgba(255, 255, 255, 0.09)"
+                            ></div>
+                            <img src="assets/empty.png">
+                           
+                        </div>
+                        <div class="result-right" onclick="confirmCraft()" style="display: none;">
+                            <i class="far fa-check icon" style="color: #A2CF6D;"></i>
+                        </div>
+                    </div>
+                    <div class="craft-text">
+                        <i class="far fa-arrow-up"></i>
+                        <span>Resultado do craft</span>
+                    </div>
+                    <div class="craft-table">
+                        <div class="item" data-slot="0"> </div>
+                        <div class="item" data-slot="1"></div>
+                        <div class="item" data-slot="2"></div>
+                        <div class="item" data-slot="3"></div>
+                        <div class="item" data-slot="4"></div>
+                        <div class="item" data-slot="5"></div>
+                        <div class="item" data-slot="6"></div>
+                        <div class="item" data-slot="7"></div>
+                        <div class="item" data-slot="8"></div>
+                    </div>
+                </div>    
+            </section>
+
+            <section id="lock-table">
+                <div class="icon-table">
+                    <i class="fal fa-lock-alt"></i>
+                </div>
+                <small>Selecione uma receita para abrir a mesa de craft</small>
+            </section>
+
+            <section class="inspect-info" style="margin-left: 70px;">
+                <div class="inspect-offer">
+                    <p id="title">receitas <b>disponiveis</b></p>
+                    <div class="inspect-content recipe-send"></div>
+                </div>
+            </section>
+
+
+        </crafting> 
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='js/font.js'></script>
+    <script src='js/loading-bar.js'></script>
+    <script src='js/tamplate.js'></script>
+    <script src='js/craftSlots.js'></script>
+    <script src='js/index.js'></script>
+
+    
+</body>
+</html>

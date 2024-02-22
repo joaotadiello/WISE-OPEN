@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background:rgba(26, 26, 26, 0.5);
+
+   /*background-image: url('https://cdn.discordapp.com/attachments/423974115653976065/679505407567331328/Screenshot_3_copia.png');*/
+}
+
+body::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:-101;
+    height: 100%;
+    /* background: rgb(0,0,0); */
+    background: radial-gradient(circle, rgba(0,0,0,0.1825105042016807) 0%, rgba(18, 18, 40, 0.72) 100%);
+}
+
+/**************************
+===========================
+**************************/
+
+* {
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/**************************
+
+    inspect DA NUI
+
+**************************/
+
+thief {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    transform: translate(-50%,-50%);
+}
+
+thief .thief-title {
+    position: absolute;
+    left: 48%;
+    top: -100px;
+    color: #fff;
+    display: flex;
+    font-size: 25px;
+    font-weight: 200;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+thief .thief-title .title-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    font-size: 30px;
+    margin-left: -5px;
+    background: #ffff;
+    border-radius: 100%;
+    align-items: center;
+    color: #000 !important;
+    justify-content: center;
+}
+
+thief .thief-title .title-left {
+    padding: 10px 15px 10px 80px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.05), transparent);
+}
+
+thief .thief-title .title-right {
+    padding: 10px 80px 10px 15px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+}
+
+thief b {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+thief .icon-near {
+    position: absolute;
+    top: 260px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+thief .icon-user {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+thief section {
+    position: relative;
+    height: 100%;
+}
+
+thief .inventory-thief {
+    width: 400px;
+    color: #fff;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+thief .change-inv {
+    position: absolute;
+    top: 50px;
+    right: 65px;
+}
+
+thief .change-inv button {
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 8px;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+thief .change-inv .active {
+    color: #000;
+    font-weight: bold;
+    background-color: #A2CF6D;
+}
+
+thief .change-inv button:first-child {
+    margin-right: 5px;
+}
+
+thief .change-inv button:hover {
+    background-color: #a1cf6d4d;
+}
+
+thief section #title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 15px;
+    max-width: 120px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+thief section .thief-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.left-send {
+    max-height: 360px;
+    overflow: auto;
+}
+
+.right-send {
+    max-height: 360px;
+    overflow: auto;
+}
+
+thief section .thief-content .item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.ui-draggable-helper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.ui-draggable-helper img {
+    max-width: 60%;
+}
+
+.ui-draggable-helper .toltip {
+    display: none;
+}
+
+.ui-draggable-helper span {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    color: #fff;
+    font-size: 7px;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+.ui-draggable-helper small {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 7px;
+    color: #fff;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+thief section .thief-content .item {
+    position: relative;
+}
+
+thief section .thief-content .item .toltip {
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: -15px;
+    color: #000;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: #A2CF6D;
+    transform: translate(-50%,0);
+}
+
+thief section .thief-content .item:hover .toltip {
+    opacity: 1;
+}
+
+thief section .thief-send {
+    overflow: auto;
+    height: 120px;
+}
+
+thief section .thief-send .item {
+    width: 70px;
+    height: 70px;
+}
+
+thief section .thief-content .item img {
+    max-width: 70%;
+}
+
+thief section .thief-content .item span {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    color: #fff;
+    font-size: 7px;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+thief section .thief-content .trash-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    padding: 5px;
+    z-index: 101;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    transition: all .2s;
+    align-items: center;
+    justify-content: center;
+    background-color: #A2CF6D;
+}
+
+thief section .thief-content .trash-item:hover {background: linear-gradient(to right, #A2CF6D,#6baa22)}
+thief section .thief-content .trash-item .icon {filter: drop-shadow(0px 0px 4px #000000) !important;}
+
+thief section .thief-content .item:hover .trash-item {
+    opacity: 1;
+}
+
+thief section .thief-content .item small {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 7px;
+    color: #fff;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+thief section input {
+    position: absolute;
+    border: 0;
+    left: 50%;
+    outline: none;
+    bottom: -20px;
+    color: #ffff;
+    padding: 15px 25px;
+    border-radius: 30px;
+    transform: translate(-50%,0);
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.418);
+}
+
+thief section input::placeholder {
+    opacity: .5;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+thief section .btn-default {
+    position: absolute;
+    border: 0;
+    left: 50%;
+    width: 50%;
+    height: 65px;
+    display: flex;
+    color: #000;
+    bottom: -30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+thief section button .ico {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+thief .status-thief {
+    width: 80px;
+    margin-left: -10px;
+}
+
+thief .status-thief .status {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    padding: 0;
+    width: 65px;
+    height: 80px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+}
+
+thief .thief-info {
+    left: -25px;
+    width: 400px;
+    color: #fff;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+thief .confirm {
+    position: absolute;
+    right: -8px;
+    border: 0;
+    padding: 0;
+    width: 80px;
+    width: 100px;
+    height: 65px;
+    bottom: -30px;
+    display: flex;
+    font-size: 15px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #A2CF6D;
+}
+
+
+inspect {
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+}
+
+inspect .inspect-title {
+    position: absolute;
+    left: 48%;
+    top: -100px;
+    color: #fff;
+    display: flex;
+    font-size: 25px;
+    font-weight: 200;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+inspect .inspect-title .title-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    font-size: 30px;
+    margin-left: -5px;
+    background: #ffff;
+    border-radius: 100%;
+    align-items: center;
+    color: #000 !important;
+    justify-content: center;
+}
+
+inspect .inspect-title .title-left {
+    padding: 10px 15px 10px 80px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.05), transparent);
+}
+
+inspect .inspect-title .title-right {
+    padding: 10px 80px 10px 15px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+}
+
+inspect b {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+inspect .icon-near {
+    position: absolute;
+    top: 260px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+inspect .icon-user {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+inspect section {
+    position: relative;
+    margin-left: -15px;
+    height: 100%;
+}
+
+inspect .change-inv {
+    position: absolute;
+    top: 50px;
+    right: 65px;
+}
+
+inspect .change-inv button {
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 8px;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+inspect .change-inv .active {
+    color: #000;
+    font-weight: bold;
+    background-color: #A2CF6D;
+}
+
+inspect .change-inv button:first-child {
+    margin-right: 5px;
+}
+
+inspect .change-inv button:hover {
+    background-color: #a1cf6d4d;
+}
+
+inspect section #title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 15px;
+    max-width: 120px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+inspect section .inspect-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+inspect section .inspect-content .item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+
+inspect section .inspect-content .item {
+    position: relative;
+}
+
+inspect section .inspect-content .item .toltip {
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    top: -15px;
+    color: #000;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: #A2CF6D;
+    transform: translate(-50%,0);
+}
+
+inspect section .inspect-content .item:hover .toltip {
+    opacity: 1;
+}
+
+inspect section .inspect-send {
+    overflow: auto;
+    height: 120px;
+}
+
+inspect section .inspect-send .item {
+    width: 70px;
+    height: 70px;
+}
+
+inspect section .inspect-content .item img {
+    max-width: 70%;
+}
+
+inspect section .inspect-content .item span {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    color: #fff;
+    font-size: 7px;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+inspect section .inspect-content .trash-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    padding: 5px;
+    z-index: 101;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    transition: all .2s;
+    align-items: center;
+    justify-content: center;
+    background-color: #A2CF6D;
+}
+
+inspect section .inspect-content .trash-item:hover {background: linear-gradient(to right, #A2CF6D,#6baa22)}
+inspect section .inspect-content .trash-item .icon {filter: drop-shadow(0px 0px 4px #000000) !important;}
+
+inspect section .inspect-content .item:hover .trash-item {
+    opacity: 1;
+}
+
+inspect section .inspect-content .item small {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 7px;
+    color: #fff;
+    max-width: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+inspect section input {
+    position: absolute;
+    border: 0;
+    left: 50%;
+    outline: none;
+    bottom: -20px;
+    color: #ffff;
+    padding: 15px 25px;
+    border-radius: 30px;
+    transform: translate(-50%,0);
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.418);
+}
+
+inspect section input::placeholder {
+    opacity: .5;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+inspect section .btn-default {
+    position: absolute;
+    border: 0;
+    left: 50%;
+    width: 50%;
+    height: 65px;
+    display: flex;
+    color: #000;
+    bottom: -30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+inspect section button .ico {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+inspect .status-inspect {
+    width: 80px;
+    margin-left: -10px;
+}
+
+inspect .status-inspect .status {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    padding: 0;
+    width: 65px;
+    height: 80px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+}
+
+inspect .inspect-info {
+    left: -25px;
+    width: 400px;
+    color: #fff;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+inspect .confirm {
+    position: absolute;
+    right: -8px;
+    border: 0;
+    padding: 0;
+    width: 80px;
+    width: 100px;
+    height: 65px;
+    bottom: -30px;
+    display: flex;
+    font-size: 15px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #A2CF6D;
+}
+
+.item:hover {
+    background-color: #a1cf6d4d !important;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #A2CF6D; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A2CF6D; 
+}
