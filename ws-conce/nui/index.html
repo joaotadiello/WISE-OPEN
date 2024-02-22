@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>WISE - SOURCE</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/owl.carousel.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/owl.theme.default.min.css'>
+</head>
+<body style="display: none;">
+
+    <background></background>
+
+    <home>
+        <main id="selected-car"></main>
+        <main id="main-section">
+            <div class="title">
+                <div class="meta">Pagina Inicial</div>
+                <h1>Selecione uma opção</h1>
+            </div>
+            <div class="primary" onclick="app_action.comprar_carros()">
+                <img src="assets/top.png">
+                <small>Comprar carros</small>
+            </div>
+            <section>
+                <div class="top">
+                    <div class="item">
+                        <div class="sell-modal" style="display: none;"></div>
+
+                        <div class="extra-vehicles"  style="display: none;">
+                            <div class="extra-title">
+                                <div class="meta"></div>
+                                <div class="close-extra" onclick="app.close_extra()"><i class="fal fa-times"></i></div>
+                            </div>
+                            <div class="flex-full">
+                                <div class="extra-content"></div>
+                                <div class="extra-info">
+                                    <div class="info-title"><i class="fas fa-exclamation-circle"></i> Atenção</div> 
+                                    <p>Selecione um carro e você sera redirecionado automaticamente para a visualização 3D do mesmo!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="slider"></div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="item">
+                        <img src="assets/fire.png">
+                        <small>Tops carros</small>
+                    </div>
+                    <div class="item" onclick="app.vehicle_menu('vip')">
+                        <img src="assets/vip.png">
+                        <small>Veiculos vips</small>
+                    </div>
+                    <div class="item" onclick="app.vehicle_menu('ofertas')">
+                        <img src="assets/special.png" >
+                        <small>Ofertas Especiais</small>
+                    </div>
+                    <div class="item" onclick="app.vehicle_menu('vender')">
+                        <img src="assets/sellcar.svg" style="max-width: 45%;">
+                        <small>Vender Veiculos</small>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </home>
+
+    <notify style="display: none;"></notify>
+    
+    <notifyFinish style="display: none;">
+        <div class="icon">
+            <div class="circle">
+                <span class="dot"></span>
+            </div>
+            <span class="mark"></span>
+        </div>
+        <h1>Pagamento concluido</h1><br>
+        <sub>Obrigado pela compra!</sub>
+        <small>Seu carro estará em sua garagem em breve!</small>
+    </notifyFinish>
+
+    <selected >
+
+        <header>
+            <div class="return-conce" onclick="app_action.return_home()">
+                <i class="far fa-chevron-left"></i>
+                <h1>voltar</h1>
+            </div>
+            <div class="category-options"></div>
+        </header>
+
+        <div class="freecam" onclick="app.change_cam()">
+            <i class="fas fa-camera-movie"></i>
+            <span style="display: none;">aperte [h] para sair</span>
+        </div>
+
+        <div class="card-info-car" style="display: none;">
+            <div class="card-actions"></div>
+            <div class="title">Informações</div>
+            <div class="content vehicle-info">
+                <h1 id="name-car">Selecione Veiculo</h1>
+                <div class="vehicle-type-body"><span id="vehicle-type">null</span></div>
+                <div class="content-item">
+                    <p>Estoque <span><b id="estoque">0</b>/100</span></p>
+                    <div class="bar"><div id="barEstoque"></div></div>
+                </div>
+                <div class="content-item">
+                    <p>Peso Porta-Malas <span><b id="weight">0</b>KG/300KG</span></p>
+                    <div class="bar"><div id="barWeight"></div></div>
+                </div>
+                <div class="vehicle-price">
+                    <div class="icon"><i class="fas fa-badge-dollar"></i></div>
+                    <div class="price" id="price">0.000,00</div>
+                </div>
+            </div>
+            <div class="tuning"></div>
+        </div>
+
+        <footer>
+            <div class="close-footer"><i class="far fa-angle-down"></i></div>
+            <div class="carousel-fix"></div>
+        </footer>
+
+    </selected>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src='js/font.js'></script>
+    <script src='js/index.js'></script>
+</body>
+</html>

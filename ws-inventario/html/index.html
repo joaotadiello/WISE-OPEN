@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>WISE - SOURCE</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+    
+
+</head>
+
+<body style="display: none;">
+
+    <div class="allnui">
+
+        <button class="identity-show" onclick="abrirIdentidade()">visualizar sua Identidade <i class="fas fa-id-card-alt"></i></button>
+        <identity style="display: none;"></identity>
+        
+        <main>
+            <h1>Inventario</h1>
+
+            <div class="inventory-desc"></div>
+            
+            <div class="inventory-player">
+                <div class="hotbar"></div>
+
+                <div class="inventory-content"></div>
+
+                <span id="kg-inventory"></span>
+
+                <div class="equipped-content">
+                    <small>Armamentos Equipados</small>
+                    <div class="equipped-slots">
+                        <div class="equipped-scroll"></div>
+                    </div>
+                    <div class="prev" onclick="minus()"><img src="assets/565870.svg"></div>
+                    <div class="next" onclick="plus()"><img src="assets/565870.svg"></div>
+                </div>
+
+            </div>
+
+            <div class="inventory-near" style="display: none;">
+                <div class="icon-near"><i class="fas fa-bags-shopping"></i></div>
+                <aside>
+                    <div class="search-item">
+                        <i class="far fa-search"></i>
+                        <input id="search-near" placeholder="Pesquisar">
+                    </div>
+                    <div class="near-content"></div>
+                </aside>
+                <div class="line"></div>
+                <section>
+                    <div class="near-img">
+                        <img src="assets/cofre22.png">
+                    </div>
+                    <div class="near-info">
+                        <span id="near-desc">Selecione um item para ver sua descrição!</span>
+                    </div>
+                    <input type="number" id="amount-near" value="0" placeholder="Quantidade">
+                    <button>quantidade</button>
+                    <span id="kg-near"></span>
+                </section>
+            </div>  
+
+            <!-- 
+                PROGRESS BAR EM CIRCULO DOS CRAFTS
+            -->
+            <div class="inventory-craft" style="display: none;">
+                <div class="craft-result">
+                    <div class="result-left">
+                        <i class="far fa-sync icon"></i>
+                        <div class="ldBar noLabel" 
+                            data-value="90"
+                            data-preset="circle"
+                            data-stroke="#BDD877"
+                            data-stroke-width="1"
+                            data-pattern-size="40"
+                            data-transition-in="100"	
+                            data-stroke-dir="reverse"
+                            data-stroke-trail-width="2"
+                            data-stroke-trail="rgba(255, 255, 255, 0.09)"
+                        ></div>
+                        <img src="">
+                    </div>
+                    <div class="result-center">
+                        <div class="ldBar noLabel" 
+                            data-value="0"
+                            data-preset="circle"
+                            data-stroke="#BDD877"
+                            data-stroke-width="1"
+                            data-transition-in="100"	
+                            data-stroke-dir="reverse"
+                            data-stroke-trail-width="2"
+                            data-stroke-trail="rgba(255, 255, 255, 0.09)"
+                        ></div>
+                        <img src="assets/download.svg">
+                    </div>
+                    <div class="result-right">
+                        <i class="far fa-check icon" style="color: #A2CF6D;"></i>
+                        <div class="ldBar noLabel" 
+                            data-value="100"
+                            data-preset="circle"
+                            data-stroke="#BDD877"
+                            data-stroke-width="1"
+                            data-pattern-size="40"
+                            data-transition-in="100"	
+                            data-stroke-dir="reverse"
+                            data-stroke-trail-width="2"
+                            data-stroke-trail="rgba(255, 255, 255, 0.09)"
+                        ></div>
+                        <img src="">
+                    </div>
+                </div>
+                <div class="craft-text">
+                    <i class="far fa-arrow-up"></i>
+                    <span>Resultado do craft</span>
+                </div>
+                <!-- 
+                    AQUI É A MESA DE CRAFT OS ITENS SÃO OS ESPAÇOS DO INV
+                -->
+                <div class="craft-table">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+            </div>
+
+            <div class="trash-content" style="display: none;">
+                <i class="fad fa-trash margin-icon"></i>
+                <small>Arraste até aqui para jogar fora</small>
+            </div>
+        </main>
+
+        <!-- NOTIFICAÇÂO -->
+        <!-- 
+            <notify>
+                <div class="svg">
+                    <svg class="checkmark success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_circle_success" cx="26" cy="26" r="25" fill="none"/></svg>
+                </div>
+                <div class="line"></div>
+                <div class="text">
+                    <span>${title}</span><br>
+                    <small>${message}</small>
+                </div>
+            </notify>
+        -->
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='js/loading-bar.js'></script>
+    <script src='js/font.js'></script>
+    <script src='js/index.js'></script>
+</body>
+</html>

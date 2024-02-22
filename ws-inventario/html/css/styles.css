@@ -1,0 +1,1521 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background:rgba(10, 10, 10, 0.35);
+    /*background-image: url('https://cdn.discordapp.com/attachments/423974115653976065/679505407567331328/Screenshot_3_copia.png');*/
+}
+
+body::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index:-1;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.1825105042016807) 0%, rgba(18, 18, 40, 0.72) 100%);
+}
+
+/**************************
+===========================
+**************************/
+
+* {
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    transition: all .2s;
+}
+
+/**************************
+
+    CORPO DA NUI
+
+**************************/
+
+main {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 500px;
+    display: flex;
+}
+
+.allnui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/**************************
+
+    OUTROS DA NUI
+
+**************************/
+
+h1 {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    margin: 0;
+    opacity: .5;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+.warning {
+    position: absolute;
+    left: 70px;
+    top: -70px;
+    padding: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: .2rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.364);
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.trash-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    letter-spacing: 2px;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    background: linear-gradient(to top, rgba(255,255,255,.300), transparent);
+}
+
+.margin-icon {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/**************************
+
+    DESCRIÇÃO DA NUI
+
+**************************/
+
+.inventory-desc {
+    width: 23%;
+    height: 100%;
+    display: flex;
+    padding-left: 70px;
+    flex-direction: column;
+}
+
+.inventory-desc .trash-item-desc {
+    position: absolute;
+    right: 0;
+    transition: all .2s;
+}
+
+.inventory-desc .trash-item-desc:hover {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    color: #000;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.inventory-desc .desc-title {
+    position: relative;
+    color: #fff;
+    display: flex;
+    font-size: 20px;
+    font-weight: 300;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.inventory-desc .desc-title span {
+    opacity: .5;
+    font-size: 12px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+.inventory-desc .desc-item {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.inventory-desc .desc-action {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+}
+
+.inventory-desc .desc-action .active {
+    background-color: #fff;
+    color: #000;
+}
+
+.inventory-desc .desc-action button {
+    border: 0;
+    width: 180px;
+    height: 55px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-desc .desc-action button:last-child {
+    margin-left: 10px;
+}
+
+.inventory-desc .desc-input {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.inventory-desc .desc-input input {
+    border: 0;
+    outline: none;
+    width: 160px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: .1rem;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.inventory-desc .desc-input small {
+    position: absolute;
+    right: 92px;
+    bottom: 70px;
+    color: #fff;
+}
+
+.inventory-desc .desc-input input[type="range"]{
+    -webkit-appearance:none;
+    width:200px;
+    height:2px;
+    background: rgba(255, 255, 255, 0.09);
+    background-position:center;
+    background-repeat:no-repeat;
+    margin: auto;
+}
+
+.inventory-desc .desc-input input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:4px;
+    height:24px;
+    border-radius: 1px;
+    background: #fff;
+    position:relative;
+    z-index:3;
+    cursor: pointer;
+}
+
+.inventory-desc .desc-input input::placeholder {
+    color: #fff;
+    font-size: 14px;
+}
+
+/**************************
+
+    INVENTARIO DA NUI
+
+**************************/
+
+.inventory-player {
+    position: relative;
+    width: 750px;
+    height: 100%;
+    display: flex;
+    margin-left: 190px;
+    flex-direction: column;
+}
+
+.inventory-player .hotbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+
+.inventory-player .hotbar .hotbar-slot {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-player .hotbar .remove {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    transition: all .2s;
+    letter-spacing: 1px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: #a1cf6d4d;
+}
+
+.inventory-player .hotbar .remove button {
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 5px 15px;
+    transition: all .2s;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.364);
+}
+
+.inventory-player .hotbar .remove button:active {
+    transform: scale(1.1);
+}
+
+.inventory-player .hotbar img {
+    max-width: 55%;
+    transform: rotate(90deg);
+}
+
+.inventory-player .hotbar .hotbar-slot:hover img {
+    filter: blur(5px);
+}
+
+.inventory-player .hotbar .hotbar-slot:hover .remove {
+    opacity: 1;
+}
+
+.inventory-player .hotbar .hotbar-slot:last-child {
+    margin-right: 0;
+}
+
+.inventory-player .hotbar .hotbar-slot label {
+    position: absolute;
+    left: 3px;
+    top: -20px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.inventory-player .hotbar .hotbar-slot small {
+    opacity: 0;
+}
+
+.inventory-player .inventory-content {
+    position: relative;
+    width: 90%;
+    height: 240px;
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.inventory-player .inventory-content .item,.slot {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.ui-draggable-helper {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.ui-draggable-helper small {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    opacity: .5;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.ui-draggable-helper img {
+    max-width: 50%;
+}
+
+.inventory-player .inventory-content .item small {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    opacity: .5;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.inventory-player .inventory-content .item img {
+    max-width: 50%;
+}
+
+.inventory-player #kg-inventory {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+    margin-right: 140px;
+    text-transform: uppercase;
+}
+
+.inventory-player #kg-inventory small {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+.inventory-player #kg-inventory b {
+    color: #A2CF6D;
+    font-weight: 400;
+}
+
+/**************************
+
+    INVENTARIO 2 DA NUI
+
+**************************/
+
+.inventory-near {
+    position: absolute;
+    top: -150px;
+    right: 80px;
+    width: 420px;
+    bottom: 0px;
+    height: 500px;
+    padding: 10px;
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near .icon-near {
+    position: absolute;
+    top: -20px;
+    padding: 0;
+    width: 50px;
+    right: -20px;
+    height: 50px;
+    color: #000;
+    display: flex;
+    font-size: 18px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.inventory-near aside {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inventory-near aside .search-item {
+    position: relative;
+    width: 106%;
+    height: 40px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near aside input {
+    border: 0;
+    width: 90%;
+    color: #fff;
+    height: 100%;
+    padding: 10px;
+    outline: none;
+    margin-left: 10px;
+    background-color: transparent;
+}
+
+.inventory-near aside .near-content {
+    width: 110%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    max-height: 420px;
+    overflow: auto;
+}
+
+.inventory-near aside .near-content .item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near aside .near-content .item:hover {
+    background-color: #a1cf6d4d;
+}
+
+.inventory-near aside .near-content .item small {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    color: #fff;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.inventory-near aside .near-content .item img {
+    max-width: 65%;
+}
+
+.inventory-near .line {
+    width: 2px;
+    height: 95%;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near section {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inventory-near section input {
+    border: 0;
+    width: 90%;
+    color: #bbb;
+    outline: none;
+    margin-top: 10px;
+    padding: 7px 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near section input::placeholder {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.inventory-near section button {
+    border: 0;
+    width: 90%;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: #A2CF6D;
+}
+
+.inventory-near section .near-img {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inventory-near section .near-img img {
+    max-width: 40%;
+}
+
+.inventory-near section .near-info {
+    width: 90%;
+    color: #fff;
+    font-size: 8px;
+    margin-top: 10px;
+    line-height: 15px;
+    padding: 10px 0px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-top: 2px solid rgba(255, 255, 255, 0.09);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+.inventory-near section span {
+    color: #fff;
+    
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.inventory-near section #kg-near {
+    position: absolute;
+    left: 55%;
+    bottom: 5px;
+    font-size: 12px;
+    transform: translate(-50%,0);
+}
+
+.inventory-near section b {
+    color: #A2CF6D;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+
+/**************************
+
+    CRAFT DA NUI
+
+**************************/
+
+.inventory-craft {
+    width: 25%;
+    height: 100%;
+}
+
+.inventory-craft .craft-result {
+    width: 300px;
+    height: 150px;
+    display: flex;
+}
+
+.inventory-craft .icon {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    color: #fff;
+    font-size: 15px;
+    transform: translate(-50%,0);
+}
+
+.inventory-craft .craft-result .result-left {
+    position: relative;
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-craft .craft-result .result-left .ldBar {
+    position: absolute;
+    left: -35px;
+}
+
+.inventory-craft .craft-result .result-center {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inventory-craft .craft-result .result-center img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: .4;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%,-50%) rotate(-180deg);
+}
+
+.noLabel .ldBar-label {
+    display: none;
+}
+
+.inventory-craft .craft-result .result-right {
+    position: relative;
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.inventory-craft .craft-result .result-right .ldBar {
+    position: absolute;
+    right: -35px;
+}
+
+.inventory-craft .craft-text {
+    width: 210px;
+    height: 80px;
+    display: flex;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: 200;
+    line-height: 30px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inventory-craft .craft-table {
+    width: 210px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.inventory-craft .craft-table .item {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.hover-btn {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+/**************************
+
+    TRADE DA NUI
+
+**************************/
+
+trade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    transform: translate(-50%,-50%);
+}
+
+trade b {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+trade .icon-near {
+    position: absolute;
+    top: 260px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+trade .icon-user {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    color: #fff;
+    font-size: 20px;
+}
+
+trade section {
+    position: relative;
+    height: 100%;
+}
+
+trade .inventory-trade {
+    width: 400px;
+    color: #fff;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+trade section #title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 15px;
+    max-width: 120px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+trade section .trade-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+trade section .trade-content .item {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+trade section .btn-default {
+    position: absolute;
+    border: 0;
+    left: 50%;
+    width: 50%;
+    height: 65px;
+    display: flex;
+    color: #000;
+    bottom: -30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+    border: 2px solid rgba(255, 255, 255, 0.09);
+}
+
+trade section button .ico {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+trade .status-trade {
+    width: 80px;
+    margin-left: -10px;
+}
+
+trade .status-trade .status {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    padding: 0;
+    width: 65px;
+    height: 80px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+}
+
+trade .trade-info {
+    left: -25px;
+    width: 400px;
+    color: #fff;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+trade .confirm {
+    position: absolute;
+    right: -8px;
+    border: 0;
+    padding: 0;
+    width: 80px;
+    width: 100px;
+    height: 65px;
+    bottom: -30px;
+    display: flex;
+    font-size: 15px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #A2CF6D;
+}
+
+.item:hover {
+    background-color: #a1cf6d4d !important;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+/**************************
+
+    EQUIPPED DA NUI
+
+**************************/
+
+.equipped-content {
+    bottom: 0;
+    width: 90%;
+    left: -32px;
+    height: 80px;
+    display: flex;
+    padding: 0 20px;
+    position: absolute;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.equipped-content small {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: translate(-50%,0);
+}
+
+.equipped-content .equipped-slots {
+    height: 60px;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.equipped-content .equipped-slots .equipped-scroll {
+    white-space: nowrap;
+}
+
+.equipped-content .equipped-slots p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar {height: 0px;width: 0px;}
+
+.prev {
+	left: -80px;
+    transform: scaleX(-1)  translate(0, -50%) !important;
+}
+
+.next {
+	right: -80px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 40%;
+	opacity: .5;
+    width: 50px;
+	height: 50px;
+	z-index: 101;
+	display: flex;
+	align-items: center;
+	transition: all .2s;
+    border-radius: 100%;
+	justify-content: center;
+	transform: translate(0, -50%);
+	background-color: rgba(255, 255, 255, 0.09);
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #a1cf6d4d;
+}
+
+.next:active,
+.prev:active {
+	opacity: 1;
+}
+
+.next img,
+.prev img {
+	max-width: 30%;
+}
+
+.equipped-content .equipped-item {
+    position: relative;
+    width: 90px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.equipped-content .equipped-item .equipped-info {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+}
+
+.equipped-content .equipped-item:hover .equipped-info {
+    opacity: 1;
+}
+
+.equipped-content .equipped-item .equipped-info span {
+    position: relative;
+    left: 5px;
+    top: -5px;
+    color: #fff;
+    font-size: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.equipped-content .equipped-item .equipped-info button {
+    position: absolute;
+    border: 0;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    background-color: #a1cf6d4d;
+}
+
+.equipped-content .equipped-item .equipped-info button:hover {
+    background-color: #A2CF6D;
+}
+
+.equipped-content .equipped-item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 60%;
+    transform: translate(-50%,-50%);
+}
+
+.equipped-content .equipped-item::before {
+    content: '';
+    top: 50%;
+    width: 2px;
+    height: 50px;
+    right: -15px;
+    position: absolute;
+    transform: translate(0,-50%);
+    background-color: rgba(255, 255, 255, 0.09);
+}
+
+.equipped-content .equipped-item:last-child {
+    margin: 0;
+}
+
+.equipped-content .equipped-item:last-child::before {
+    display: none;
+}
+
+/**************************
+
+    IDENTIDADE DA NUI
+
+**************************/
+
+identity {
+    position: absolute;
+    top: 75px;
+    left: 60px;
+    padding: 10px;
+    display: flex;
+    border-radius: .5rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+identity::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: -33px;
+    width: 2px;
+    height: 33px;
+    transform: translate(-50%,0);
+    background-color:rgba(255, 255, 255, 0.07);
+}
+
+.identity-show {
+    position: absolute;
+    border: 0;
+    top: 10px;
+    left: 230px;
+    color: #fff;
+    outline: none;
+    padding: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: all .2s;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.identity-show:hover {
+    background-color: #a1cf6d4d;
+}
+
+.identity-show:active {
+    transform: scale(1.1);
+}
+
+identity .close-identity {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    transition: all .2s;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+identity .close-identity:hover {
+    background-color: #a1cf6d4d;
+}
+
+identity .close-identity:active {
+    transform: scale(1.1);
+}
+
+identity .photo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: .1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+identity .photo .job {
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    color: #000;
+    width: 100px;
+    height: 20px;
+    display: flex;
+    font-size: 8px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    align-items: center;
+    justify-content: center;
+    transform: skew(-15deg);
+    text-transform: uppercase;
+    background-color: #A2CF6D;
+}
+
+identity .photo .job p {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+identity .info-identity {
+    position: relative;
+    display: flex;
+    right: -40px;
+    width: 450px;
+    color: #fff;
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin-top: -5px;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+identity .info-identity .box {
+    margin-right: 15px;
+    width: 30%;
+}
+
+identity .info-identity .box:last-child {
+    margin: 0;
+}
+
+identity .info-identity label {
+    font-size: 8px;
+    opacity: .5;
+}
+
+
+
+/**************************
+
+    NOTIFY DA NUI
+
+**************************/
+
+notify {
+    position: absolute;
+    top: 30px;
+    left: 60%;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-transform: uppercase;
+    transform: translate(-50%, 0);
+    background-color: rgba(100, 100, 100, 0.75);
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+notify .line {
+	width: 2px;
+	height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: rgba(180, 0.384);
+}
+
+notify .text {
+	line-height: 20px;
+}
+
+notify .text span {
+	opacity: .5;
+}
+
+.checkmark_circle_success {
+	stroke-dasharray: 166;
+	stroke-dashoffset: 166;
+	stroke-width: 5px;
+	stroke-miterlimit: 10;
+	stroke: #00C851;
+	animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_circle_error {
+	stroke-dasharray: 166;
+	stroke-dashoffset: 166;
+	stroke-width: 5px;
+	stroke-miterlimit: 10;
+	stroke: #ff4444;
+	animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: block;
+	stroke-width: 5px;
+	stroke: white;
+	stroke-miterlimit: 10;
+	margin: 10% auto;
+}
+
+.checkmark.success {
+	box-shadow: inset 0px 0px 0px #00C851;
+	animation: fillsuccess 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark.error {
+	box-shadow: inset 0px 0px 0px #ff4444;
+	animation: fillerror 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark_check {
+	transform-origin: 50% 50%;
+	stroke-dasharray: 48;
+	stroke-dashoffset: 48;
+	animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+.progress {
+	transform: rotate(-90deg);
+	stroke: black;
+}
+
+.progress circle {
+	stroke-dasharray: 130;
+	stroke-dashoffset: 130;
+	animation: dash 1.5s infinite;
+}
+
+@keyframes dash {
+	50% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: -130;
+	}
+}
+
+.progress {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
+
+.progress.progress--thin {
+	left: auto;
+	right: 5%;
+}
+
+@keyframes stroke {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes scale {
+	0%,
+	100% {
+		transform: none;
+	}
+	50% {
+		transform: scale3d(1.1, 1.1, 1);
+	}
+}
+
+@keyframes fillsuccess {
+	100% {
+		box-shadow: inset 0px 0px 0px 75px #00C851;
+	}
+}
+
+@keyframes fillerror {
+	100% {
+		box-shadow: inset 0px 0px 0px 75px #ff4444;
+	}
+}
+
+@media only screen and (max-width: 1600px) { /* 1366x768 */
+    .inventory-desc {
+        zoom: 0.8;
+        margin-top: 120px;
+    }
+    .identity-show {
+        transform: scale(.7);
+    }
+    identity {
+        top: 44px;
+        transform: scale(.7);
+    }
+    main {
+        bottom: -85px;
+    }
+    .warning {
+        top: 20px;
+    }
+    .inventory-player {
+        margin-left: 50px;
+        transform: scale(.8);
+    }
+    .equipped-content {
+        position: relative;
+        bottom: -40px;
+        right: -25px;
+    }
+    .hotbar {
+        margin-bottom: -40px;
+    }
+    .inventory-content {
+        position: relative;
+        top: 50px;
+    }
+    .inventory-player #kg-inventory {
+        margin-top: 60px;
+    }
+    .inventory-near {
+        right: 0;
+        top: -100px;
+        transform: scale(.8);
+    }
+}
+
+@media only screen and (max-width: 1366px) { /* 1366x768 */
+    .inventory-desc {
+        zoom: 0.7;
+        margin-top: 120px;
+    }
+    main {
+        bottom: -85px;
+    }
+    .warning {
+        top: 20px;
+    }
+    .inventory-player {
+        margin-left: 10px;
+        transform: scale(.7);
+    }
+    .equipped-content {
+        position: relative;
+        bottom: -40px;
+        right: -25px;
+    }
+    .hotbar {
+        margin-bottom: -40px;
+    }
+    .inventory-content {
+        position: relative;
+        top: 50px;
+    }
+    .inventory-player #kg-inventory {
+        margin-top: 60px;
+    }
+    .inventory-near {
+        right: 0;
+        top: -100px;
+        transform: scale(.7);
+    }
+}
+
+@media only screen and (max-width: 1024px) { /* 1024x768 */
+    .inventory-desc {
+        zoom: 0.6;
+        margin-top: 180px;
+    }
+    main {
+        bottom: -110px;
+    }
+    .warning {
+        top: 70px;
+    }
+    .inventory-player {
+        margin-left: -90px;
+        transform: scale(.6);
+    }
+    .equipped-content {
+        position: relative;
+        bottom: -40px;
+        right: -25px;
+    }
+    .hotbar {
+        margin-bottom: -40px;
+    }
+    .inventory-content {
+        position: relative;
+        top: 50px;
+    }
+    .inventory-player #kg-inventory {
+        margin-top: 60px;
+    }
+    .inventory-near {
+        right: -70px;
+        top: -100px;
+        transform: scale(.6);
+    }
+}
+
+@media only screen and (max-width: 900px) { /* 1366x768 */
+    .inventory-desc {
+        zoom: 0.5;
+        margin-top: 240px;
+    }
+    main {
+        bottom: -137px;
+    }
+    .warning {
+        top: 100px;
+    }
+    .inventory-player {
+        margin-left: -120px;
+        transform: scale(.5);
+    }
+    .equipped-content {
+        position: relative;
+        bottom: -40px;
+        right: -25px;
+    }
+    .hotbar {
+        margin-bottom: -40px;
+    }
+    .inventory-content {
+        position: relative;
+        top: 50px;
+    }
+    .inventory-player #kg-inventory {
+        margin-top: 60px;
+    }
+    .inventory-near {
+        top: -100px;
+        right: -100px;
+        transform: scale(.5);
+    }
+}
