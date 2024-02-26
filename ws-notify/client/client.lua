@@ -6,6 +6,21 @@ function SendReactMessage(action, data)
     SendNUIMessage({ action = action, data = data })
 end
 
+--- @param image string
+---@param name string
+---@param amount number
+---@param action 'recebeu' | 'enviou'
+local function NotifyItens(image,name,amount,action)
+    SendReactMessage("0x771F3335", {
+        image = image,
+        name = name,
+        amount = amount,
+        action = action
+    })
+end
+exports('NotifyItens', NotifyItens)
+RegisterNetEvent('NotifyItens', NotifyItens)
+
 --- @vararg 0xA524CA30 notify:config
 --- @vararg 0x47827583 Config
 --- @vararg 0x1C31B317 auth
